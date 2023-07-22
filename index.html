@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>CarClaimPro</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container px-4">
+      <a class="navbar-brand" href="#page-top">Wandering Woodpeckers</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#ourproject">Our Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="#background">Background</a></li>
+          <li class="nav-item"><a class="nav-link" href="#eda">EDA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#models">Models</a></li>
+          <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusion</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Header-->
+  <header class="bg-primary bg-gradient text-white">
+    <div class="container px-4 text-center">
+      <h1 class="fw-bolder">CarClaimPro</h1>
+      <p class="lead">"Smarter Predictions, Smoother Rides."</p>
+      <a class="btn btn-lg btn-light" href="#about">Try our Product!</a>
+    </div>
+    <br> 
+    <center><iframe width="420" height="315"
+        src="https://www.youtube.com/embed/bEH2MNvxV0M">
+      </iframe></center>
+  </header>
+  <!-- Background section-->
+  <section id="background">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>Background Information</h2>
+          <p class="lead">Car insurance companies provide financial protection against car damage or physical harm
+            resulting from traffic collisions and against liability that could also arise from incidents in a vehicle.
+            This model predicts the probability of a policyholder filing to claim such car insurance.<br>The goals of
+            this project are to:</p>
+          <ul>
+            <li>Creating an accuracte machine learning model from scratch</li>
+            <li>Develop relevant industry skills needed in data science</li>
+            <li>Experience team product development</li>
+            <li>Enjoy the process!!</li>
+          </ul>
+          <p class="lead">Before we started this project, we made some hypotheses of what factors could lead to more car insurance claims. For example, we predicted that:</p>
+          <ul>
+            <li>Younger drivers cause more collisions</li>
+            <li>More safety features on a car would lead to less collisions</li>
+            <li>The chance of a claim increases when the policy tenure is older</li>
+          </ul>
+            
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- EDA section-->
+  <section class="bg-light" id="eda">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>Exploratory Data Analysis</h2>
+          <br>
+          <h4>Correlation heatmap</h4>
+          <p class="lead">This heatmap shows the correlation between different features and the target variable of our analysis</p>
+          <iframe src="assets/heatmap.html" width=600 height=1000 title="heatmap" ></iframe>
+          <br>
+          <h4>Bar Graphs</h4>
+          <p class="lead">This bar graph displays the correlation between car insurance claims and the policy tenure. Through ploting the average policy tenure for claimed and unclaimed car insurance, it can be observed that there is a higher chance of insurnace claim when the policy tenure is older.</p>
+          <img src="assets/Screenshot 2023-07-13 at 2.20.13 PM.png" width=600> 
+          <br>
+          <h4>Scatter plots</h4>
+          <p class="lead">The below graph displays the correlation between the age of policyholder and age of car. </p>
+          <iframe src="assets/plotly_scatter.html" width=800 height=900 title="scatter" ></iframe>
+          <br>
+          <h4>Histograms</h4>
+          <p class="lead">The below histograms display the distribution of the normalised age of policyholders when car insurance is claimed and for all bought car insurnace respectively. By comparing these two histograms, it can be observed that in policyholders aged around 0.3 there is a lower percentage of policyholders filing for a car insurance claim, and in policyholders aged around 0.5 and 0.8 there is a higher percentage of policyholders filing for a car insurance claim.</p>
+          <img src="assets/Screenshot 2023-07-13 at 2.25.32 PM.png" width=600> 
+          <img src="assets/Screenshot 2023-07-13 at 2.26.50 PM.png" width=600> 
+          <br>
+          <h4>Pie graphs</h4>
+          <p class="lead">This pie graph matrix displays the proportion of trues and falses in all yes/no features in our dataset. </p>
+          <img src="assets/Pie_Matrix_Top.png" width=600>
+          <img src="assets/Pie_Matrix_Bottom.png" width=600>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Models section-->
+  <section id="models">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>Machine Learning Models</h2>
+          <br></br>
+          <h5>Classification</h5>
+          <p class="lead">Using classification models, we deteremined whether or not car insurance would be claimed
+            based off of factors such as the age of a policyholder, the policy tenure, and the age of the car.</p>
+          
+          <br></br>
+          
+          <h4>KNN (K Nearest Neighbors) Model</h4>
+          <p class="lead"> KNN works by using looking at existing input data, and uses it to predict new input data.It does this by examining input data points, and analyzing the difference of values between each point.</p>
+          <img src="assets/KNN.png" class="matrices">
+          <br></br>
+          <h5>KNN Model Analysis</h5>
+          <p class="lead">Our KNN Model had ___ accuracy on the dataset we used. As shown on the confusion matrix, our KNN model correctly predicted 10957 cars that did not have claims. However, our matrix also incorrectly predicted 762 cars having no insurance claim, and it made no predictions for any cars having an insurance claim, showing that our model made no attempt to predict if a car would have an insurance claim. Therefore, this model would not work for our product based on the dataset we used since we wouldn't be able to predict if a car would recieve an insurance claim. </p>
+          <img src="assets/KNN_Confusion_Matrix.png" class="matrices">
+          
+          <br></br>
+          
+          <h4>Gaussian Naive Bayes (GNB) Model</h4>
+          <p class="lead">The Gaussian Naive Bayes model is another classification model that functions by assuming each parameter/input has the capacity to independently predict the target/output variable. Then, it combines the predictions of all of the parameters/inputs to create a final prediction for the target variable, and it assigns that target variable to the group with a higher probability. </p>
+          <img src="assets/Gaussian_Naive_Bayes.jpg" class="matrices">
+          <br></br>
+          <h5>Gaussian Naive Bayes Model Analysis</h5>
+          <p class="lead">Our Gaussian Naive Bayes Model (GNB) had ___ accuracy on the dataset we used. On our confusion matrix it can be seen that our GNB model correctly predictied 11018 cars having no car insurance. However, our model also incorrectly predicted 701 cars to have no insurance claim. Furthermore, our model, like the KNN model, did not make any attempts to predict if a car actually had a car insurance claim. Therefore, this model would also not work for our product based on the dataset we used since we wouldn't be able to predict if a car would recieve an insurance claim.</p>
+          <img src="assets/Gaussian_Naive_Bayes_Confusion.png" class="matrices">
+          
+          <br></br>
+          
+          <h4>Decision Tree Model</h4>
+                    <p class="lead"> The Decision Tree model works by using previous data and outputs in order to find questions to ask a new dataset and new input variables, and make decisions based off the response. After it makes a decision, it asks another question and continues to narrow down what each input variable is classified as, until it runs out of input variables and makes a final prediction. Based on all of the decisions on whether or not the object has certain inputs, the decision tree will decide which group an object belongs to.</p>
+          <img src="assets/Decision_Tree.png" class="matrices">
+          <br></br>
+          <h5>Decision Tree Model Analysis</h5>
+          <p class="lead">Our Decision Tree Model had ___ accuracy on the dataset we used. On our confusion matrix it can be seen that our Decision Tree model correctly predictied 10140 cars having no car insurance. Additionally, unlike our two previous models, our model did attempt to predict if a car having a car insurance claim, as it predicted 59 cars with claims correctly. However, our model did also make a larger ammount of errors as it incorrectly predicted 641 cars having no insurance claim, and incorrectly predicted 879 cars having an insurance claim. Therefore, while this model still wouldn't work very well for our product as it is very inaccuracte, it does start predicting if the car has an insurance claim, making it more viable than the previous two models.</p>
+          <img src="assets/Decision_Tree_Confusion.png" class="matrices">
+          
+          <br></br>
+          
+          <h4>Random Forest Model</h4>
+          <p class="lead">The Random Forest model functions similarily to a Decision Tree Model. It uses previous data to ask questions about new data, and make decisions based on the answer. Then it creates a prediction for an output after asking multiple questions and making multiple decisions. However, a Random Forest model takes multiple Decision Trees and combines their predictions together to make a larger prediction and then classifies that object to a certain group.</p>
+          <img src="assets/Random_Forest.jpg" class="matrices">
+          <br></br>
+          <h5>Random Forest Model Analysis</h5>
+          <p class="lead">Our Random Forest Model had ___ Accuracy. As shown on the confusion matrix, our Random Forest model correctly predicted 10690 cars that did not have claims. Additioanlly, our Random Forest model also correctly predicted 20 cars that had insurance claims. However, our matrix also incorrectly predicted 680 cars to have no insurance claim, and 329 cars to have an insurance claim. Therefore, while this model does predict if a car has an insurance claim, it still won't be extremely useful for our product as it predicts if a car has an insurance claim with low accuracy, and also at a very low rate. </p>
+          <img src="assets/Forest Confusion Matrix.png" class="matrices">
+          
+          <br></br>
+          
+          <h4>XGBoost Model</h4>
+          <p class="lead"> XGBoost functions by using gradient boosting, which combines simpler, less advanced models, and creates a prediction based upon the combiniation of those models. </p>
+          <img src="assets/XGBoost.png" class="matrices">
+          <br></br>
+          <h5>XGBoost Model Analysis</h5>
+          <img src="assets/xgboost.jpeg" class="matrices">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Conclusion section-->
+  <section class="bg-light" section id="conclusion">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">
+          <h2>Conclusion</h2>
+          <p class="lead">In Conclusion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Team section-->
+  <section class="bg-light" id="team">
+    <div class="container px-4">
+      <div class="row gx-4 justify-content-center">
+        <div class="col-lg-8">         
+          <h2>The Team</h2>          
+          <div class="container" >
+            <div class="row">
+              <!-- Team Member 1 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                  <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Blake Almon</h5>
+                    <div class="card-text text-black-50">Web Developer</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 2 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                  <img src="team/hannah_2.jpg" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Hannah Ip</h5>
+                    <div class="card-text text-black-50">Web Developer</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 3 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                  <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Jeremy Siu</h5>
+                    <div class="card-text text-black-50">Web Developer</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 4 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                  <img src="team/Joanna.jpeg" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Joanna Lau</h5>
+                    <div class="card-text text-black-50">Web Developer</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 5 -->
+              <div class="col-xl-3 col-md-6 mb-4 offset-xl-1">
+                <div class="card border-0 shadow">
+                  <img src="team/Ruth.jpg" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Ruth George</h5>
+                    <div class="card-text text-black-50">Web Developer</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 6 -->
+              <div class="col-xl-3 col-md-6 mb-4 ">
+                <div class="card border-0 shadow">
+                  <div class= "cropping">
+                  <img src="team/Sam_2.jpg" class="card-img-top"  alt="...">
+                  </div>
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Samuel Lim</h5>
+                    <div class="card-text text-black-50">Web Developer</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Team Member 7-->
+              <div class="col-xl-3 col-md-6 mb-4 ">
+                <div class="card border-0 shadow">
+                  <img src="https://source.unsplash.com/7u5mwbu7qLg/500x350" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Josh Yancey</h5>
+                    <div class="card-text text-black-50">Web Developer</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer-->
+  <footer class="py-5 bg-dark">
+    <div class="container px-4">
+      <p class="m-0 text-center text-white">Copyright &copy; CarClaimPro 2023</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
